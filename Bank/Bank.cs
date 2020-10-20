@@ -12,7 +12,7 @@ namespace BankAccountNs
 
         public const string DebetAmountExceedsBalanceMessage = "Debet amount exceeds balance";
         public const string DebetAmountLessThanZeroMessage = "Debet amount is less than zero";
-        public const string CreditAmountLessThanZeroMessage = "Credot amount is less than zero";
+        public const string CreditAmountLessThanZeroMessage = "Credit amount is less than zero";
 
         private BankAccount() { }
 
@@ -55,7 +55,7 @@ namespace BankAccountNs
         {
             if(amount < 0)
             {
-                throw new ArgumentOutOfRangeException("amount");
+                throw new ArgumentOutOfRangeException("amount",amount,CreditAmountLessThanZeroMessage);
             }
 
             m_balance += amount;
